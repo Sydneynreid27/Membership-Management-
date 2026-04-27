@@ -64,3 +64,38 @@ for m in members:
             print(f"WARNING: {full_name} is listed as {m.donation_level} but should be {expected_level}")
         else:
             print(f"{full_name} membership is correct ({m.donation_level})")
+
+import numpy as np
+
+# -----------------------------
+# TUPLE (fixed membership tiers)
+# -----------------------------
+membership_tiers = ("Bronze", "Silver", "Gold")
+print("\nMembership tiers (tuple):", membership_tiers)
+
+
+# -----------------------------
+# LIST (collection of members)
+# -----------------------------
+member_list = []
+for m in members:
+    member_list.append(f"{m.first_name} {m.last_name}")
+
+print("\nMember list (list):", member_list)
+
+
+# -----------------------------
+# DICTIONARY (already used + extended example)
+# -----------------------------
+print("\nDonation data (dictionary):", donation_data)
+
+
+# -----------------------------
+# ARRAY (numeric donation analysis)
+# -----------------------------
+donation_array = np.array(list(donation_data.values()))
+
+print("\nDonation values (array):", donation_array)
+print("Total donations:", np.sum(donation_array))
+print("Average donation:", np.mean(donation_array))
+print("Max donation:", np.max(donation_array))
