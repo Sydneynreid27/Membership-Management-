@@ -1,4 +1,4 @@
-first_name,last_name,donation_level
-Frank,Castle,Bronze
-Gwen,Stacy,Silver
-Cindy,Moon,Gold
+first_name,last_name,donation_level,total_donations
+Frank,Castle,Bronze,1000.0
+Gwen,Stacy,Silver,5000.0
+Cindy,Moon,Gold,10000.0

@@ -1,0 +1,40 @@
+# Changelog
+
+
+### Added
+
+Interactive menu system
+Reason: The original code had no user interface, all test data was hard-coded, rendering it unusable as a standalone tool. The new menu loop provides six features—Add Donation, View Members, Statistical Analysis, View Pending Changes, Apply & Save, and Safe Exit—turning the program into a practical application.
+
+Cumulative donation ( "total_donation" )
+Reason: The original data model only stored membership level and could not track donation history, causing levels to be determined by single donations. The new field enables continuous accumulation and level updates based on total contributions.
+
+Dynamic new-member creation
+Reason: The original code could only work with a predefined member list and could not accept new donors at runtime. The new feature automatically identifies new names during donation entry and creates corresponding member records.
+
+Input validation with looping prompts
+Reason: The original script had no input validation; invalid inputs (e.g., letters, negative numbers) would crash the program. The new validation loop repeatedly requests a valid amount and rejects negatives.
+
+Menu action handler functions ( "handle_" )
+Reason: Encapsulating each menu option's logic into a separate, single-responsibility function keeps the main flow lean and facilitates maintenance and testing.
+
+Complete unit test file
+Reason: Adding "unittest" coverage for core functions (level determination, accumulation logic, file I/O, etc.)
+
+### Improved & Fixed
+
+Modular code structure
+Reason: The original flat script mixed logic fragments and was hard to extend. The refactored version is function-oriented and modular, with main logic in "main()" guarded by "if __name__ == __main__", improving readability and maintainability.
+
+Configurable dictionary for tier determination
+Reason: The original hard-coded if-elif chain was inflexible for threshold changes. Using a "TIERS" dictionary, makes adding or adjusting tiers a single-place modification, clarifying business rules.
+
+Encapsulated CSV operations with error handling
+Reason: Original I/O was lacked file-not-found handling. Encapsulating into "save_members_to_csv" and "load_members_from_csv" unified column definitions, added fallback warnings.
+
+Improved user prompts and formatting
+Reason: Redesigned output includes section banners, formatted currency, and clear status-change messages, improving the terminal user experience.
+
+Support for structured data display
+Reason: The original lacked unified views for member lists and pending donations. New functions ("show_members", "show_donation_analysis", "handle_pending_changes") render data clearly using formatted printing and NumPy statistics.
+
